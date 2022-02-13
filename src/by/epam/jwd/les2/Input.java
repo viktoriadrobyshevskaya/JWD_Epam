@@ -5,10 +5,14 @@ import java.util.Scanner;
 
 public class Input {
 
-    public int inputByScanner() {
+    public int inputByScanner(String message) {
         int number;
+        System.out.println(message);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число: ");
+        while (!scanner.hasNextInt()) {
+            scanner.nextLine();
+            System.out.println("Вы ввели не число. Попробуйте снова: ");
+        }
         number = scanner.nextInt();
         return number;
     }
@@ -16,8 +20,17 @@ public class Input {
     public int inputByRandom() {
         int number;
         Random random = new Random();
-        number = random.nextInt(25);
+        number = random.nextInt(20);
         System.out.println(number);
         return number;
+    }
+
+    public int[] inputArrayByRandom(int x) {
+        int[] arr = new int[x];
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(20);
+        }
+        return arr;
     }
 }
