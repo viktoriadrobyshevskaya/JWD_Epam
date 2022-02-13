@@ -10,8 +10,15 @@ public class View {
         System.out.println(value);
     }
 
-    public void outputIntToConsole(int value) {
-        System.out.println(value);
+    public void outputPerimeterAndSquare(double perimeter, double square) {
+        System.out.println("Периметр = " + perimeter + ", площадь = " + square);
     }
 
+    public void outputIntToConsole(String message, int value) {
+        System.out.println(message + value);
+    }
+
+    public void outputArrayToConsole(int[] array) {
+        System.out.println(Arrays.toString(array));
+    }
 }
